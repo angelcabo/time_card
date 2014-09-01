@@ -1,0 +1,81 @@
+feature:
+  id: 190197
+  project_id: 158
+  number: 20607
+  name: ! 'ITH: Revisit has_one_with_deferred_save'
+  description: ! '...'
+  created_at: 2013-08-30 20:11:36.766000000 Z
+  updated_at: 2014-08-04 19:06:47.714000000 Z
+  version: 16
+  created_by_user_id: 329
+  modified_by_user_id: 1013
+  card_type_name: Card
+  has_macros: false
+  project_card_rank: 788
+  caching_stamp: 4
+  cp_analyst_user_id: 761
+  cp_automation: Not Started
+  cp_committed_card: 'No'
+  cp_dev_pair: Brian
+  cp_1_card_id: 157951
+  cp_initiative_tree___initiative_card_id: 157705
+  cp_planning_tree___iteration_card_id: 222778
+  cp_release: 1.135 - 09/05/2014
+  cp_status: Ready for Deployment
+  cp_team_1: Onyx
+  cp_priority_to_deliver: 4 - Low
+  cp_translations_needed: 'No'
+  redcloth: false
+feature_without_initiative:
+  id: 223666
+  project_id: 158
+  number: 22524
+  name: ! 'Defect: Image Download Error on Worker04'
+  description: ! '...'
+  created_at: 2014-07-30 20:12:05.812000000 Z
+  updated_at: 2014-08-05 16:56:32.932000000 Z
+  version: 9
+  created_by_user_id: 510
+  modified_by_user_id: 585
+  card_type_name: Defect
+  has_macros: true
+  project_card_rank: 4507
+  caching_stamp: 0
+  cp_created_date: 2014-07-30
+  cp_defect_priority: '1'
+  cp_dev_pair: Ana/Gil
+  cp_environment: Production
+  cp_planning_tree___iteration_card_id: 222778
+  cp_release: 1.135 - 09/05/2014
+  cp_defect_severity: High
+  cp_status: In Development
+  cp_team_1: Onyx
+  cp_translations_needed: 'No'
+  redcloth: false
+initiative:
+  id: 157705
+  project_id: 158
+  number: 15322
+  name: ATC15477 102233 IT HUSBANDRY
+  description: ! "..."
+  created_at: 2013-02-25 18:56:32.694000000 Z
+  updated_at: 2014-08-04 21:08:41.000000000 Z
+  version: 7
+  created_by_user_id: 599
+  modified_by_user_id: 1
+  card_type_name: Initiative
+  has_macros: true
+  project_card_rank: 48
+  caching_stamp: 42826
+  cp_atc: '15477'
+  cp_initiative_status: Develop
+  cp_oracle_code: '106298'
+  cp_business_contact_user_id: 54
+  cp_project_manager_user_id: 1
+  cp_project_type: OPEX
+  cp_total_of_commitment_estimates: '63.5000000000'
+  cp_total_of_commitment_estimates_planned: '363.1250000000'
+  cp_total_cards_1: '629'
+  cp_total_of_commitment_estimates_1: '100.025'
+  cp_number_of_total_cards: '502.0000000000'
+  redcloth: false

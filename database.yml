@@ -1,0 +1,6 @@
+adapter: postgresql
+host: mingledb.ove.local
+port: 5432
+username: ruby_developer
+password: rubyp@ss
+database: mingle

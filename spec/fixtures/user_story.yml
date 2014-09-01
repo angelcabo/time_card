@@ -1,0 +1,15 @@
+card:
+  project_id: 1
+  created_by_user_id: 1
+  modified_by_user_id: 1
+  card_type_name: Card
+initiative:
+  project_id: 1
+  created_by_user_id: 1
+  modified_by_user_id: 1
+  card_type_name: Initiative
+version:
+  cp_status: 'Ready for Development'
+  created_by_user_id: 1
+  modified_by_user_id: 1
+  card_type_name: 'Feature'

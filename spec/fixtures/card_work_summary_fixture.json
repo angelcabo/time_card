@@ -1,0 +1,31 @@
+[
+    {
+        "id": 190197,
+        "project_id": 158,
+        "number": 20607,
+        "name": "ITH: Revisit has_one_with_deferred_save",
+        "description": "\u003ch2\u003eDev Notes (Brian 8-4-2014)\u003c/h2\u003e\r\n\r\n\u003cp\u003eWe ended up removing the extension and replacing the functionality with a unique index for listing_id on condition_informations table.\u003c/p\u003e\r\n\r\n\u003cp\u003eFrom our investigation, we found the extension was added to hide a race condition saving models associated through a has_one relationship during concurrent requests. This only moves the race condition back in the process and obscures what is happening. Rails can't know what is happening across requests so if two requests come in to save condition informations it will save both. The solution is to add a unique index on condition_informations.\u0026nbsp;\u003c/p\u003e\r\n\r\n\u003ch2\u003eUser Story\u003c/h2\u003e\r\n\r\n\u003cp\u003eRemove or replace has_one_with_deferred_save so that we can avoid invalid model states.\u003c/p\u003e\r\n\r\n\u003ch2\u003eStory Background\u003c/h2\u003e\r\n\r\n\u003cp\u003eIf a model that is saved in the database has a has_one relation, and a newly initialized model is associated through it, that new model will immediately be saved. This caused issues because Listing has a default ConditionInformation (NoConditionInformation), which will get saved and then replaced by an actual ConditionInformation shortly afterward, leaving the incorrect NoConditionInformation in the database.\u003c/p\u003e\r\n\r\n\u003cp\u003ehas_one_with_deferred save was written to hold the newly associated ConditionInformation in memory until the listing is saved, at which point the ConditionInformation is saved too, and this works—so long as no other associated model has validation errors.\u003c/p\u003e\r\n\r\n\u003cp\u003eIf an associated model has validation errors, the following happens:\u003c/p\u003e\r\n\r\n\u003col\u003e\r\n \u003cli\u003eListing is validated and saved successfully\u003c/li\u003e\r\n \u003cli\u003eListing object in memory is given an ID\u003c/li\u003e\r\n \u003cli\u003eAssociated model is validated and fails\u003c/li\u003e\r\n \u003cli\u003eTransaction rolls back\u003c/li\u003e\r\n \u003cli\u003eAssociated model is destroyed\u003c/li\u003e\r\n \u003cli\u003eListing object in memory now has an ID and new_record? is false, and the model that caused the failure is nil.\u003c/li\u003e\r\n\u003c/ol\u003e\r\n\r\n\u003cp\u003eThis does not appear to happen anywhere in the codebase, but there is no protection against it happening. This card is intended to determine the necessity of replacing has_one_with_deferred_save and then remove or replace it accordingly.\u003c/p\u003e",
+        "created_at": "2013-08-30T20:11:36.766Z",
+        "updated_at": "2014-08-04T19:06:47.714Z",
+        "version": 16,
+        "created_by_user_id": 329,
+        "modified_by_user_id": 944,
+        "card_type_name": "Card",
+        "has_macros": false,
+        "project_card_rank": 4463,
+        "caching_stamp": 4,
+        "cp_analyst_user_id": 761,
+        "cp_automation": "Not Started",
+        "cp_committed_card": "No",
+        "cp_dev_pair": "Brian",
+        "cp_1_card_id": 157951,
+        "cp_initiative_tree___initiative_card_id": 157705,
+        "cp_planning_tree___iteration_card_id": 222778,
+        "cp_release": "1.135 - 09/05/2014",
+        "cp_status": "Ready for Deployment",
+        "cp_team_1": "Onyx",
+        "cp_priority_to_deliver": "4 - Low",
+        "cp_translations_needed": "No",
+        "redcloth": false
+    }
+]
